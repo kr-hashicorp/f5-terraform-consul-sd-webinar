@@ -28,7 +28,7 @@ resource "aws_autoscaling_group" "nginx" {
 resource "aws_launch_configuration" "nginx" {
   name_prefix                 = "${var.prefix}-nginx-"
   image_id                    = data.aws_ami.ubuntu.id
-  instance_type               = "t2.micro"
+  instance_type               = "t3.micro"
   associate_public_ip_address = true
 
   security_groups = [aws_security_group.nginx.id]
